@@ -58,7 +58,7 @@ client.on :message do |data|
     client.message channel: data['channel'], text: help
     logger.debug("A call for help")
 
-when 'Wetter', /Wie ist das Wetter in ([\w]+)?/ then
+when /Wie ist das Wetter in ([\w]+)?/ then
     matches = /Wie ist das Wetter in ([\w]+)?/.match data['text']
     city = matches[1]
     
