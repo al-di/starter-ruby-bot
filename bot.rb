@@ -36,7 +36,7 @@ client.on :message do |data|
   case data['text']
   when 'hallo', 'hi' then
     client.typing channel: data['channel']
-    client.message channel: data['channel'], text: "Yuo are very nice! <@#{data['user']}>."
+    client.message channel: data['channel'], text: "ja! <@#{data['user']}>."
     logger.debug("<@#{data['user']}> said hi")
 
     if direct_message?(data)
@@ -57,13 +57,15 @@ client.on :message do |data|
     client.message channel: data['channel'], text: help
     logger.debug("A call for help")
 
-  when /^bot/ then
-    client.message channel: data['channel'], text: "Sorry <@#{data['user']}>, I don\'t understand. \n#{help}"
-    logger.debug("Unknown command")
   when 'Wie wird das Wetter?', 'Wie ist das Wetter?' then
     wetter_info = Net::HTTP.get('api.openweathermap.org', '/data/2.5/weather?q=Bonn&appid=b1b15e88fa797225412429c1c50c122a
     end')
     client.message chanel: data['chanel'], text: wetterinfo
+    
+  when /^bot/ then
+    client.message channel: data['channel'], text: "Sorry <@#{data['user']}>, I don\'t understand. \n#{help}"
+    logger.debug("Unknown command")
+  
   end
 end
 
