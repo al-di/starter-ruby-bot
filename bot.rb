@@ -64,7 +64,7 @@ when 'Wetter', 'Wie ist das Wetter?' then
     client.message channel: data['channel'], text: wetterinfo['weather'][0]['description']
     
 when 'Wetter2', 'Wie ist das Wetter?' then
-  wetterinfo = Net::HTTP.get('api.openweathermap.org', '/data/2.5/weather?q=new york&appid=b1b15e88fa797225412429c1c50c122a')
+  wetterinfo = Net::HTTP.get('api.openweathermap.org', '/data/2.5/weather?q=new_york&appid=b1b15e88fa797225412429c1c50c122a')
   wetterinfo = JSON.parse wetterinfo
   client.message channel: data['channel'], text: wetterinfo['weather'][0]['description']
   
