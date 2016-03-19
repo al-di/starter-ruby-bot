@@ -61,7 +61,6 @@ client.on :message do |data|
 when /Wie ist das Wetter in ([\w]+)?/ then
     matches = /Wie ist das Wetter in ([\w]+)?/.match data['text']
     city = matches[1]
-    
     wetterinfo = Net::HTTP.get('api.openweathermap.org', '/data/2.5/weather?q=#{city}&appid=b1b15e88fa797225412429c1c50c122a')
     wetterinfo = JSON.parse wetterinfo
     client.message channel: data['channel'], text: wetterinfo['weather'][0]['description']
