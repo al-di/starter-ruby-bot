@@ -69,8 +69,11 @@ when /Wie ist das Wetter in ([\w]+)?/ then
 
 when 'ja', 'nein' then
   client.message channel: data['channel'], text: 'Wer hat dich etwas gefragt?'
+
+when 'hallo', 'hi' then
+  client.message channel: data['channel'], text: 'Du Chatest schon wieder?'
   
-    
+  
   when /^bot/ then
     client.message channel: data['channel'], text: "Sorry <@#{data['user']}>, I don\'t understand. \n#{help}"
     logger.debug("Unknown command") 
