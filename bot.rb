@@ -68,6 +68,10 @@ when 'hallo', 'hi' then
     client.message channel: data['channel'], text: "Sorry <@#{data['user']}>, I don\'t understand. \n#{help}"
     logger.debug("Unknown command") 
   
+  when 'Wie', 'Was','Wo', 'Wann' then
+    client.message channel: data['channel'], text: 'Haha!Was wießt du schon wieder nicht?'
+  
+  
   end
 end
 
