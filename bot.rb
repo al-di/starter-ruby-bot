@@ -72,6 +72,8 @@ when 'hallo', 'hi' then
   when 'Wie', 'Was','Wo', 'Wann' then
     client.message channel: data['channel'], text: 'Haha!Was wießt du schon wieder nicht?'
   
+  when 'e' then
+    client.message channel: data['channel'], text: 'eee geschrieben haha'
   
   end
 end
