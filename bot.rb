@@ -74,7 +74,8 @@ when 'hallo', 'hi' then
   
   when 'e' then
     client.message channel: data['channel'], text: 'eee geschrieben haha'
-  
+  when 'a' then
+    client.message channel: data['channel'], text: 'eee geschrieben haha'
   end
 end
 
